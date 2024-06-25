@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mongodb sharing"
+title: "MongoDB学习整理"
 date: 2024-06-25
 categories: mongodb
 ---
