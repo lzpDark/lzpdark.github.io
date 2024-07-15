@@ -33,3 +33,4 @@ categories: schedule
 
 - [example of spring-quartz-schedule](https://www.baeldung.com/spring-quartz-schedule)
 - [elastic job](https://shardingsphere.apache.org/elasticjob/)
+  - [what if worker node crash while processing job?](https://shardingsphere.apache.org/elasticjob/current/en/features/failover/)
