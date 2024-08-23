@@ -1,3 +1,10 @@
+---
+layout: post
+title: "搭建docker环境"
+date: 2024-08-23
+categories: docker
+---
+
 # 搭建docker环境
 
 本地开发的时候需要搭建一个docker环境辅助测试，这里主要记录我遇到的几个问题。
