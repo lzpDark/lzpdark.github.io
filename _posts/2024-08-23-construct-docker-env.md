@@ -114,6 +114,4 @@ docker context ls
 #### 2.2.3 IDEA配置
 
 找到IDEA的service部分，添加Docker
-![1.png](../assets/img/construct-docker-env-01.png)
 输入远程dockerd的连接信息
-![2.png](../assets/img/construct-docker-env-02.png)
