@@ -7,13 +7,13 @@ categories: rabbitmq, amqp, transaction
 
 # 业务和消息怎么保证一致成功或失败
 
-### 场景
+## 场景
 
 某部分业务操作数据库，再发消息到消息队列，其他服务会消费消息并做对应业务处理。
 
-### 问题
+## 问题
 
-##### 不希望消息丢失
+### 不希望消息丢失
 
 为了做到这个需要三个保证：
 
@@ -21,7 +21,7 @@ categories: rabbitmq, amqp, transaction
 - broker端要持久化保存消息。
 - 消费端处理消息成功后 ，再ack，保证不漏处理消息。
 
-##### 不希望数据库和消息队列不一致
+### 不希望数据库和消息队列不一致
 
 比如：
 
@@ -36,11 +36,11 @@ categories: rabbitmq, amqp, transaction
 
 2. 消息队列事务
 
-### 方案
+## 方案
 
 我查到两个方案
 
-##### - 本地消息表
+### - 本地消息表
 
 【去哪儿】开源的消息队列[qmq](https://github.com/qunarcorp/qmq/blob/master/docs/cn/transaction.md) 根据本地消息表来处理。
 
@@ -50,7 +50,7 @@ categories: rabbitmq, amqp, transaction
 
 3. 发送消息成功后删除消息表里对应的记录，这里可以异步操作+定时扫描消息下表发送消息。
 
-##### 2. 回查接口
+### - 回查接口
 
 [rocketmq](https://rocketmq.apache.org/zh/docs/featureBehavior/04transactionmessage)通过回查接口来处理
 
