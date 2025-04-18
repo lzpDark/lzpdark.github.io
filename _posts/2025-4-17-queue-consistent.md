@@ -20,6 +20,8 @@ categories: rabbitmq, amqp, transaction
 - 发送端至少发消息成功一次。
 - broker端要持久化保存消息。
 - 消费端处理消息成功后 ，再ack，保证不漏处理消息。
+  - [配置consumer-timeout防止有unack阻塞消息](https://www.rabbitmq.com/docs/consumers#acknowledgement-timeout)
+
 
 ### 不希望数据库和消息队列不一致
 
