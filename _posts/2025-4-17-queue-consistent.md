@@ -57,3 +57,18 @@ categories: rabbitmq, amqp, transaction
 [rocketmq](https://rocketmq.apache.org/zh/docs/featureBehavior/04transactionmessage)通过回查接口来处理
 
 ![](https://rocketmq.apache.org/zh/assets/images/transflow-0b07236d124ddb814aeaf5f6b5f3f72c.png)
+
+### - 最大努力通知
+
+这个方案一般用于服务之间的事务，比如短信通知。
+
+A服务：1.本地创建业务记录。 2. 调用短信服务
+
+短信服务成功后调用A服务的回调接口：3. 更新业务记录状态。 这一步会有重试，但是没办法保证一定调用成功A服务的回调接口
+
+如果说通知允许丢失那到此也不用额外做什么处理了。
+
+假如不允许通知丢失的话，业务上需要再加一个定期任务做补偿：1.扫描业务记录； 2.从短信服务查询是否成功了； 3. 调A服务更新任务状态。
+
+[参考这篇文章介绍](https://www.cnblogs.com/yuhushen/p/15530168.html)
+
